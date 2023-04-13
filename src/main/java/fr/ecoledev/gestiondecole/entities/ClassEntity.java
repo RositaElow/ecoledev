@@ -2,6 +2,7 @@ package fr.ecoledev.gestiondecole.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
@@ -9,11 +10,14 @@ import jakarta.persistence.Id;
 public class ClassEntity {
    
 	@Id 
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private int level;
 	private String field;
+	
+	
+	private Integer ecoleId;
 	
 	/**
 	 * Empty Constructor
